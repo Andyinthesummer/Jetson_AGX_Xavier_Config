@@ -1,5 +1,23 @@
 # Opencv Installation
 
+## Eigen
+[eigen主页](https://eigen.tuxfamily.org/index.php?title=Main_Page)
+
+```bash
+## remove v3.4
+sudo apt-get purge libeigen3-dev
+## install v3.3.7
+git clone https://gitlab.com/libeigen/eigen.git
+cd eigen
+git checout 3.3.7
+mkdir build
+## install_dir_prex = /usr
+cmake-gui
+cd build
+make 
+sudo make install
+```
+
 ## Opencv Version
 ```bash
 ## check opencv vversion
@@ -21,8 +39,14 @@ sudo find / -iname "*opencv*"
 $ git clone https://github.com/jetsonhacks/buildOpenCVXavier.git 
 $ cd buildOpenCVXavier 
 $ git checkout v1.0 
-$ ./buildOpenCV.sh 
+$ vim buildOpenCV.sh 
+## 下载结束部分添加exit 0，只用来安装依赖库和下载opencv
+$ cd ~/opencv
+$ git clone https://github.com/opencv/opencv_contrib.git
+$ git checout 3.4.3
 ```
+
+
 
 **Note:**
 1. 可以修改shell安装脚本,进行个性化安装,如可以修改安装路径`INSTALL_DIR=/usr/local`(autoware默认安装在`/usr/`路径下),是否下载额外的测试例程`DOWNLOAD_OPENCV_EXTRAS=NO`(不用下),如果opencv源码自己手动下载(git clone可能会比较慢),脚本中如下语句可以注释掉,避免重复执行:

@@ -19,7 +19,7 @@ Jetson AGX Xavier Developer Kit的[官方网站](https://developer.nvidia.com/em
 
 **注意**: 
 
-1. 刷机时,请将Xavier前面的type-c口(J512)连接到主机上.
+1. 刷机时,请将Xavier前面的type-c口(J512)(led旁边)连接到主机上.
 2. 一般来说,xavier自动检测识别,不需要进入recovery模式,如果不能识别,进入recovery模式方法如下(在[用户手册](https://developer.nvidia.com/embedded/dlc/jetson-agx-xavier-developer-kit-user-guide)中有介绍):
 
 > - 保持正确线缆连接,并将Xavier关机
@@ -30,7 +30,7 @@ Jetson AGX Xavier Developer Kit的[官方网站](https://developer.nvidia.com/em
 
 ## 主机使用sdk manager给Xavier刷机
 ### 安装sdk manager
-在jetson的下载中心下载[sdkmanager](https://developer.nvidia.com/nvidia-sdk-manager).在页面最下面还可以选择sdk之前的版本进行下载安装.
+在jetson的下载中心下载最新的sdk manager[sdkmanager](https://developer.nvidia.com/nvidia-sdk-manager)，当前版本为`1.4.1.7402`, 通过sdk manager可以选择不同版本的jetpack来给系统刷机，不同版本的jetpack包含的软件版本不同，当前使用的jetpack版本为`4.5.1`.
 
 ![](images/xavier_configuration/sdkmanager_download.png)
 
@@ -53,8 +53,8 @@ sudo apt install ./sdkmanager-[version].deb
 选择continue进入step2,可以选择文件下载的地址,以及是否要刷机,安装sdk,可以看到要安装的软件版本,有系统的话可以不选择刷机.
 ![](images/xavier_configuration/sdk_step02.png)
 ### STEP 03
-进入step3时,开始下载所需的镜像和sdks,网络不稳定时可能出现下载失败的情况,可以暂停重新开始来多次尝试,要保证网络的稳定性.
-下载完成后会首先刷机,请在Xavier上完成系统设置,设置完成后会提示安装SDKs,使用type-c连接可以使用下面默认的IP192.168.55.1,否则需要在同一局域网下,输入xavier的IP(在xavier上使用ifconfig进行查询),然后输入你设置好的用户名和密码开始安装.
+进入step3时,开始下载所需的镜像和sdks,网络不稳定时可能出现下载失败的情况,可以暂停重新开始来多次尝试,要保证网络的稳定性。
+下载完成后会首先刷机,请在Xavier上完成系统设置,设置完成后会提示安装SDKs,使用type-c连接可以使用下面默认的IP192.168.55.1,否则需要在同一局域网下,输入xavier的IP(在xavier上使用ifconfig进行查询),然后输入你设置好的用户名和密码开始安装。此外，请保证xavier也能正确联网，否则在安装sdks时可能因为依赖安装错误失败。
 ![](images/xavier_configuration/sdk_step03.png)
 
 ### STEP 04
