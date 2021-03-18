@@ -3,14 +3,14 @@ Record the steps of xavier configuration
 
 
 ## Set up xavier
-- [xavier_introduction](xavier_introduction.md)
-- [xavier_configuration](sdk_manager.md)
-- [ssd_install](SSD_install.md)
-- [usefull_tools](usefull_tools.md)
-- [ros_related](ros_related.md)
-- [opencv_installation](opencv_install.md)
-- [autoware_install](autoware_install.md)
-
+- [Xavier introduction](xavier_introduction.md)
+- [Xavier configuration](xavier_configuration.md)
+- [SSD install](SSD_install.md)
+- [Usefull tools](usefull_tools.md)
+- [Ros related](ros_related.md)
+- [Opencv installation](opencv_install.md)
+- [Autoware install](autoware_install.md)
+- [Image clone and recovery](image_clone_recovery.md)
 
 ## Reference pages
 - [nvidia_xavier_utils](https://github.com/ShreyasSkandanS/nvidia_xavier_utils)
