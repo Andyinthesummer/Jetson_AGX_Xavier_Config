@@ -46,8 +46,6 @@ $ git clone https://github.com/opencv/opencv_contrib.git
 $ git checout 3.4.3
 ```
 
-
-
 **Note:**
 1. 可以修改shell安装脚本,进行个性化安装,如可以修改安装路径`INSTALL_DIR=/usr/local`(autoware默认安装在`/usr/`路径下),是否下载额外的测试例程`DOWNLOAD_OPENCV_EXTRAS=NO`(不用下),如果opencv源码自己手动下载(git clone可能会比较慢),脚本中如下语句可以注释掉,避免重复执行:
     > cd $OPENCV_SOURCE_DIR    

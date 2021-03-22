@@ -4,7 +4,7 @@ Install autoware from source by following the [source build](https://gitlab.com/
 
 ### Key Steps
 
-1. Flash the xavier with sdkmaneger
+1. Flash the xavier with sdkmaneger, ref. [Xavier configuration](xavier_configuration.md).
 
 2. Remove opencv4 and install 3.2.0(default in 18.04)
 
@@ -17,9 +17,18 @@ $ sudo vim /etc/apt/sources.list.d/nvidia-l4t-apt-source.list
 ## deb https://repo.download.nvidia.com/jetson/common r32.5 main
 ## deb https://repo.download.nvidia.com/jetson/t194 r32.5 main
 $ sudo apt-get update
+```
+
+```bash
 ## install opencv 3.2.0 default instead of opencv4
 $ sudo apt-get install libopencv-dev
 ```
+
+*Note:*
+
+* opencv 3.2.0 uncompiled with cuda(as shown in `$ jtop`)
+
+* opencv compiled with cuda please ref. [Opencv installation](opencv_install.md)(version 3.4.3)
 
 3. Version of eigen must be greater than 3.3.7
 
@@ -66,6 +75,9 @@ $ sudo apt-get install libopencv-dev
     ## Without CUDA Support
     ## colcon build --cmake-args -DCMAKE_BUILD_TYPE=Release
     ```
+
+
+* 
 
 **Ref.**
 1. [Autoware Installation Wiki](https://gitlab.com/autowarefoundation/autoware.ai/autoware/-/wikis/Installation)
