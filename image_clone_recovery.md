@@ -12,6 +12,7 @@ Flash the system and ref. [xavier_configuration](xavier_configuration.md).
 **KEY STEPS**
 
 **1.** 连接Xavier与主机。可以直接使用usb-typc线缆连接，直接分配192.168.55.1字段IP。
+
 **2.** ssh登录Xavier
 ```bash
 ## 标记系统为只读
