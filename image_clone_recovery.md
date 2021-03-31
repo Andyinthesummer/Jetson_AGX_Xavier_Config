@@ -12,6 +12,7 @@ Flash the system and ref. [xavier_configuration](xavier_configuration.md).
 **KEY STEPS**
 
 **1.** 连接Xavier与主机。可以直接使用usb-typc线缆连接，直接分配192.168.55.1字段IP。
+
 **2.** ssh登录Xavier
 ```bash
 ## 标记系统为只读
@@ -20,7 +21,9 @@ $ sudo echo "u" | sudo dd of=/proc/sysrq-trigger
 $ sudo dd if=/dev/mmcblk0p1 | ssh andy@192.168.55.100 dd of=/home/andy/xavier-image.raw
 ## 30064771072 bytes (30 GB, 28 GiB) copied, 283.565 s, 106 MB/s
 ```
+
 **3.** 转化生成的raw到稀疏的img，加快刷机
+
 ```bash
 ## 切换到相应的Jetpack版本bootloader下
 $ cd /home/andy/nvidia/nvidia_sdk/JetPack_4.5.1_Linux_JETSON_AGX_XAVIER/Linux_for_Tegra/bootloader
@@ -30,6 +33,7 @@ $ sudo ./mksparse -v --fillpattern=0 /home/andy/xavier-image.raw system-new.img
 $ mv system.img system-old.img
 $ mv system-new.img system.img
 ```
+
 **4.** 使用usb-typc线缆连接主机和新的xavier设备,将Xavier切换到recovery模式(设备上有三个按钮，按住中间的按钮，再按开机按钮，然后同时放开两个按钮)
 ```bash
 $ cd /home/andy/nvidia/nvidia_sdk/JetPack_4.5.1_Linux_JETSON_AGX_XAVIER/Linux_for_Tegra/

@@ -8,27 +8,27 @@ Install autoware from source by following the [source build](https://gitlab.com/
 
 2. Remove opencv4 and install 3.2.0(default in 18.04)
 
-```bash
-## remove opencv4
-$ sudo apt-get purge libopencv*
-##
-$ sudo vim /etc/apt/sources.list.d/nvidia-l4t-apt-source.list
-## remove the apt source of jetson
-## deb https://repo.download.nvidia.com/jetson/common r32.5 main
-## deb https://repo.download.nvidia.com/jetson/t194 r32.5 main
-$ sudo apt-get update
-```
+    ```bash
+    ## remove opencv4
+    $ sudo apt-get purge libopencv*
+    ##
+    $ sudo vim /etc/apt/sources.list.d/nvidia-l4t-apt-source.list
+    ## remove the apt source of jetson
+    ## deb https://repo.download.nvidia.com/jetson/common r32.5 main
+    ## deb https://repo.download.nvidia.com/jetson/t194 r32.5 main
+    $ sudo apt-get update
+    ```
 
-```bash
-## install opencv 3.2.0 default instead of opencv4
-$ sudo apt-get install libopencv-dev
-```
+    ```bash
+    ## install opencv 3.2.0 default instead of opencv4
+    $ sudo apt-get install libopencv-dev
+    ```
 
-*Note:*
+    *Note:*
 
-* opencv 3.2.0 uncompiled with cuda(as shown in `$ jtop`)
+    * opencv 3.2.0 uncompiled with cuda(as shown in `$ jtop`)
 
-* opencv compiled with cuda please ref. [Opencv installation](opencv_install.md)(version 3.4.3)
+    * opencv compiled with cuda please ref. [Opencv installation](opencv_install.md)(version 3.4.3)
 
 3. Version of eigen must be greater than 3.3.7
 
@@ -76,26 +76,18 @@ $ sudo apt-get install libopencv-dev
     ## colcon build --cmake-args -DCMAKE_BUILD_TYPE=Release
     ```
 
+### Ref.
 
-* 
+1. [Autoware Installation Wiki](https://gitlab.com/autowarefoundation/autoware.ai/autoware/-/wikis/Installation).
 
-**Ref.**
-1. [Autoware Installation Wiki](https://gitlab.com/autowarefoundation/autoware.ai/autoware/-/wikis/Installation)
+2. Autoware Project has been moved to Github: https://github.com/Autoware-AI/autoware.ai.
 
-
-Autoware Project has been moved to Github: https://github.com/Autoware-AI/autoware.ai
-
-View source code according to [autoware.ai.repos](https://github.com/Autoware-AI/autoware.ai/blob/master/autoware.ai.repos) file.
-
-
-
+3. View source code according to [autoware.ai.repos](https://github.com/Autoware-AI/autoware.ai/blob/master/autoware.ai.repos) file.
 
 
 ### Issues
 1. CUDA version
-support 10.0
-10.2 in Jetson AGX Xavier
-
+Support version 10.0, 10.2 in Jetson AGX Xavier, please adjust the version of cuda in file:`autoware.ai/src/autoware/common/autoware_build_flags/cmake/lsautoware_build_flags-extras.cmake`.
 2. Opencv version
 
 
